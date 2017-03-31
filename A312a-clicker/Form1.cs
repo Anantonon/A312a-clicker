@@ -19,7 +19,7 @@ namespace A312a_clicker
             timer1.Interval = 1000;
         }
 
-        int ord_skrevet = 0;
+        int words_written = 0;
         int anton_writer = 0;
 
 
@@ -28,22 +28,22 @@ namespace A312a_clicker
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Projekt_Click(object sender, EventArgs e)
         {
-            ++ord_skrevet;
-            ord_skrevet_viser.Text = $"Ord skrevet: {ord_skrevet}";
+            ++words_written;
+            words_written_counter.Text = $"Words written: {words_written}";
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Anton_Click(object sender, EventArgs e)
         {
-            if (ord_skrevet >= 1.6*(2 * anton_writer))
+            if (words_written >= 1.6*(2 * anton_writer))
             {
-                ord_skrevet -= (int)(1.6 * (2 * anton_writer));
-                ord_skrevet_viser.Text = $"Ord skrevet: {ord_skrevet}";
+                words_written -= (int)(1.6 * (2 * anton_writer));
+                words_written_counter.Text = $"Words written: {words_written}";
                 ++anton_writer;
-                anton_count.Text = $"Antoner: {anton_writer}";
-                anton_pris.Text = $"Pris: {1.6 * (2 * anton_writer)}";
+                anton_count.Text = $"Antons: {anton_writer}";
+                anton_price.Text = $"Price: {1.6 * (2 * anton_writer)}";
 
 
             }
@@ -53,14 +53,14 @@ namespace A312a_clicker
         {
             if (anton_writer > 0)
             {
-                ord_skrevet += 2*anton_writer;
-                ord_skrevet_viser.Text = $"Ord skrevet: {ord_skrevet}";
+                words_written += 2*anton_writer;
+                words_written_counter.Text = $"Words written: {words_written}";
             }
         }
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            Save.SaveGame(ord_skrevet.ToString(), anton_writer.ToString());
+            Save.SaveGame(words_written.ToString(), anton_writer.ToString());
         }
     }
 }
