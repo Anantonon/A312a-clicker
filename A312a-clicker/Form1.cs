@@ -16,11 +16,13 @@ namespace A312a_clicker
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 1000;
+            timer1.Interval = 1000; //Starter timeren, der tæller words up hvert sekund
+
         }
 
         int words_written = 0;
-        int anton_writer = 0;
+        Anton anton = new Anton();
+
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,13 +39,14 @@ namespace A312a_clicker
 
         private void Anton_Click(object sender, EventArgs e)
         {
-            if (words_written >= 1.6*(2 * anton_writer))
+            
+            if (words_written >= 1.6*(2 * anton.Number))
             {
-                words_written -= (int)(1.6 * (2 * anton_writer));
+                words_written -= (int)(anton.Price());
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++anton_writer;
-                anton_count.Text = $"Antons: {anton_writer}";
-                anton_price.Text = $"Price: {1.6 * (2 * anton_writer)}";
+                ++anton.Number;
+                anton_count.Text = $"Antons: {anton.Number}";
+                anton_price.Text = $"Price: {anton.Price()}";
 
 
             }
@@ -51,16 +54,16 @@ namespace A312a_clicker
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (anton_writer > 0)
+            if (anton.Number > 0)
             {
-                words_written += 2*anton_writer;
+                words_written += 2* anton.Number;
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            Save.SaveGame(words_written.ToString(), anton_writer.ToString());
+            Save.SaveGame(words_written.ToString(), anton.Number.ToString());
         }
     }
 }
