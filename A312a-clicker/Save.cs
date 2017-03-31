@@ -12,6 +12,8 @@ namespace A312a_clicker
         {
             string[] stuff = { wordnr, antonnr };
 
+
+
             System.IO.File.WriteAllLines(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), stuff);
         }
     }
