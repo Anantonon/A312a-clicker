@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anton.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Upgrade_button.cs">
       <SubType>Component</SubType>
     </Compile>
