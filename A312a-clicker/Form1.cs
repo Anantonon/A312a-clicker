@@ -40,7 +40,7 @@ namespace A312a_clicker
         private void Anton_Click(object sender, EventArgs e)
         {
             
-            if (words_written >= 1.6*(2 * anton.Number))
+            if (words_written >= anton.Price())
             {
                 words_written -= (int)(anton.Price());
                 words_written_counter.Text = $"Words written: {words_written}";
