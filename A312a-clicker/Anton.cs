@@ -11,7 +11,7 @@ namespace A312a_clicker
         public Anton() {}
 
         //public int Number = 0;
-        override public double Price()
+        public override double Price()
         {
             return 1.6 * (2 * Math.Pow(Number, 2));
         }
