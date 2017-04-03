@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anton.cs" />
+    <Compile Include="Lasse.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Upgrade_button.cs">
       <SubType>Component</SubType>
@@ -91,6 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Anton1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lasse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lasse1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

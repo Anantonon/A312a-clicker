@@ -73,6 +73,26 @@ namespace A312a_clicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lasse {
+            get {
+                object obj = ResourceManager.GetObject("Lasse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lasse1 {
+            get {
+                object obj = ResourceManager.GetObject("Lasse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sharelatex {
             get {
                 object obj = ResourceManager.GetObject("sharelatex", resourceCulture);

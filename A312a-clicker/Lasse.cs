@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace A312a_clicker
 {
-    public class Anton : Person
+    public class Lasse : Person
     {
         public override double Price()
         {
-            return 2 + 1.6 * (2 * Math.Pow(Number, 2));
+            return 1000 + 1.6 * (2 * Math.Pow(Number, 3));
         }
     }
 }

@@ -16,12 +16,13 @@ namespace A312a_clicker
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 1000; //Starter timeren, der tæller words up hvert sekund
+            timer1.Interval = 1000; //Starts timer, that adds words/second to words_written
 
         }
 
         int words_written = 0;
         Anton anton = new Anton();
+        Lasse lasse = new Lasse();
 
 
 
@@ -43,11 +44,10 @@ namespace A312a_clicker
             if (words_written >= anton.Price())
             {
                 words_written -= (int)(anton.Price());
-                words_written_counter.Text = $"Words written: {words_written}";
+                //words_written_counter.Text = $"Words written: {words_written}";
                 ++anton.Number;
                 anton_count.Text = $"Antons: {anton.Number}";
                 anton_price.Text = $"Price: {anton.Price()}";
-
 
             }
         }
@@ -56,14 +56,31 @@ namespace A312a_clicker
         {
             if (anton.Number > 0)
             {
-                words_written += 2* anton.Number;
-                words_written_counter.Text = $"Words written: {words_written}";
+                words_written += 2 * anton.Number;
             }
+            if (lasse.Number > 0)
+            {
+                words_written += 100 * lasse.Number;
+            }
+            words_written_counter.Text = $"Words written: {words_written}";
         }
 
         private void save_button_Click(object sender, EventArgs e)
         {
             Save.SaveGame(words_written.ToString(), anton.Number.ToString());
+        }
+
+        private void Lasse_Click(object sender, EventArgs e)
+        {
+            if (words_written >= lasse.Price())
+            {
+                words_written -= (int)(lasse.Price());
+                //words_written_counter.Text = $"Words written: {words_written}";
+                ++lasse.Number;
+                lasse_count.Text = $"Lasses: {lasse.Number}";
+                lasse_price.Text = $"Price: {lasse.Price()}";
+
+            }
         }
     }
 }

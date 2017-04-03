@@ -30,13 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.words_written_counter = new System.Windows.Forms.Label();
-            this.button_anton = new System.Windows.Forms.Button();
-            this.button_projekt = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.anton_count = new System.Windows.Forms.Label();
             this.save_button = new System.Windows.Forms.Button();
             this.anton_price = new System.Windows.Forms.Label();
             this.upgrade_panel = new System.Windows.Forms.Panel();
+            this.button_lasse = new System.Windows.Forms.Button();
+            this.button_anton = new System.Windows.Forms.Button();
+            this.button_projekt = new System.Windows.Forms.Button();
+            this.lasse_price = new System.Windows.Forms.Label();
+            this.lasse_count = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // words_written_counter
@@ -48,27 +51,6 @@
             this.words_written_counter.TabIndex = 1;
             this.words_written_counter.Text = "Words written: 0";
             this.words_written_counter.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button_anton
-            // 
-            this.button_anton.Image = global::A312a_clicker.Properties.Resources.Anton1;
-            this.button_anton.Location = new System.Drawing.Point(12, 12);
-            this.button_anton.Name = "button_anton";
-            this.button_anton.Size = new System.Drawing.Size(178, 229);
-            this.button_anton.TabIndex = 2;
-            this.button_anton.UseVisualStyleBackColor = true;
-            this.button_anton.Click += new System.EventHandler(this.Anton_Click);
-            // 
-            // button_projekt
-            // 
-            this.button_projekt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_projekt.Image = global::A312a_clicker.Properties.Resources.sharelatex;
-            this.button_projekt.Location = new System.Drawing.Point(584, 277);
-            this.button_projekt.Name = "button_projekt";
-            this.button_projekt.Size = new System.Drawing.Size(129, 163);
-            this.button_projekt.TabIndex = 0;
-            this.button_projekt.UseVisualStyleBackColor = true;
-            this.button_projekt.Click += new System.EventHandler(this.Projekt_Click);
             // 
             // timer1
             // 
@@ -109,11 +91,64 @@
             this.upgrade_panel.Size = new System.Drawing.Size(566, 163);
             this.upgrade_panel.TabIndex = 6;
             // 
+            // button_lasse
+            // 
+            this.button_lasse.CausesValidation = false;
+            this.button_lasse.Image = global::A312a_clicker.Properties.Resources.Lasse1;
+            this.button_lasse.Location = new System.Drawing.Point(217, 12);
+            this.button_lasse.Name = "button_lasse";
+            this.button_lasse.Size = new System.Drawing.Size(178, 229);
+            this.button_lasse.TabIndex = 7;
+            this.button_lasse.UseVisualStyleBackColor = true;
+            this.button_lasse.Click += new System.EventHandler(this.Lasse_Click);
+            // 
+            // button_anton
+            // 
+            this.button_anton.Image = global::A312a_clicker.Properties.Resources.Anton1;
+            this.button_anton.Location = new System.Drawing.Point(12, 12);
+            this.button_anton.Name = "button_anton";
+            this.button_anton.Size = new System.Drawing.Size(178, 229);
+            this.button_anton.TabIndex = 2;
+            this.button_anton.UseVisualStyleBackColor = true;
+            this.button_anton.Click += new System.EventHandler(this.Anton_Click);
+            // 
+            // button_projekt
+            // 
+            this.button_projekt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_projekt.Image = global::A312a_clicker.Properties.Resources.sharelatex;
+            this.button_projekt.Location = new System.Drawing.Point(584, 277);
+            this.button_projekt.Name = "button_projekt";
+            this.button_projekt.Size = new System.Drawing.Size(129, 163);
+            this.button_projekt.TabIndex = 0;
+            this.button_projekt.UseVisualStyleBackColor = true;
+            this.button_projekt.Click += new System.EventHandler(this.Projekt_Click);
+            // 
+            // lasse_price
+            // 
+            this.lasse_price.AutoSize = true;
+            this.lasse_price.Location = new System.Drawing.Point(282, 244);
+            this.lasse_price.Name = "lasse_price";
+            this.lasse_price.Size = new System.Drawing.Size(61, 13);
+            this.lasse_price.TabIndex = 8;
+            this.lasse_price.Text = "Price: 1000";
+            // 
+            // lasse_count
+            // 
+            this.lasse_count.AutoSize = true;
+            this.lasse_count.Location = new System.Drawing.Point(282, 261);
+            this.lasse_count.Name = "lasse_count";
+            this.lasse_count.Size = new System.Drawing.Size(52, 13);
+            this.lasse_count.TabIndex = 9;
+            this.lasse_count.Text = "Lasses: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 482);
+            this.Controls.Add(this.lasse_count);
+            this.Controls.Add(this.lasse_price);
+            this.Controls.Add(this.button_lasse);
             this.Controls.Add(this.upgrade_panel);
             this.Controls.Add(this.anton_price);
             this.Controls.Add(this.save_button);
@@ -138,6 +173,9 @@
         private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.Label anton_price;
         private System.Windows.Forms.Panel upgrade_panel;
+        private System.Windows.Forms.Button button_lasse;
+        private System.Windows.Forms.Label lasse_price;
+        private System.Windows.Forms.Label lasse_count;
     }
 }
 
