@@ -17,10 +17,12 @@ namespace A312a_clicker
             InitializeComponent();
             timer1.Start();
             timer1.Interval = 1000; //Starts timer, that adds words/second to words_written
-
+            this.KeyPress +=
+               new KeyPressEventHandler(Typing);
         }
 
         int words_written = 0;
+        int _typedWords = 0;
         Anton anton = new Anton();
         Lasse lasse = new Lasse();
 
@@ -31,25 +33,28 @@ namespace A312a_clicker
 
         }
 
+        
         private void Projekt_Click(object sender, EventArgs e)
         {
+            /*
             ++words_written;
             words_written_counter.Text = $"Words written: {words_written}";
-
+            */
         }
-
-        private void Anton_Click(object sender, EventArgs e)
+        
+        void Typing(object sender, KeyPressEventArgs e)
         {
-            
-            if (words_written >= anton.Price())
+            if (_typedWords < 10)
             {
-                words_written -= (int)(anton.Price());
-                //words_written_counter.Text = $"Words written: {words_written}";
-                ++anton.Number;
-                anton_count.Text = $"Antons: {anton.Number}";
-                anton_price.Text = $"Price: {anton.Price()}";
-
+                ++_typedWords;
             }
+            else
+            {
+                _typedWords = 1;
+                ++words_written;
+                words_written_counter.Text = $"Words written: {words_written}";
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -75,11 +80,21 @@ namespace A312a_clicker
             if (words_written >= lasse.Price())
             {
                 words_written -= (int)(lasse.Price());
-                //words_written_counter.Text = $"Words written: {words_written}";
+                words_written_counter.Text = $"Words written: {words_written}";
                 ++lasse.Number;
                 lasse_count.Text = $"Lasses: {lasse.Number}";
                 lasse_price.Text = $"Price: {lasse.Price()}";
-
+            }
+        }
+        private void Anton_Click(object sender, EventArgs e)
+        {
+            if (words_written >= anton.Price())
+            {
+                words_written -= (int)(anton.Price());
+                words_written_counter.Text = $"Words written: {words_written}";
+                ++anton.Number;
+                anton_count.Text = $"Antons: {anton.Number}";
+                anton_price.Text = $"Price: {anton.Price()}";
             }
         }
     }

@@ -156,6 +156,7 @@
             this.Controls.Add(this.button_anton);
             this.Controls.Add(this.words_written_counter);
             this.Controls.Add(this.button_projekt);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
