@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace A312a_clicker
 {
-    public abstract class Person
+    public class Ezzi : Person
     {
-        public UInt64 Number = 0;
-        public abstract double Price();
+        public override double Price()
+        {
+            return 5000000000 + 1.6 * (2 * Math.Pow(Number, 2));
+        }
     }
 }

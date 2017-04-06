@@ -73,6 +73,26 @@ namespace A312a_clicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap casper {
+            get {
+                object obj = ResourceManager.GetObject("casper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap casper1 {
+            get {
+                object obj = ResourceManager.GetObject("casper1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lasse {
             get {
                 object obj = ResourceManager.GetObject("Lasse", resourceCulture);
@@ -93,9 +113,39 @@ namespace A312a_clicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mads {
+            get {
+                object obj = ResourceManager.GetObject("mads", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sharelatex {
             get {
                 object obj = ResourceManager.GetObject("sharelatex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thue {
+            get {
+                object obj = ResourceManager.GetObject("thue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Udklip {
+            get {
+                object obj = ResourceManager.GetObject("Udklip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
