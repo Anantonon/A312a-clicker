@@ -19,16 +19,23 @@ namespace A312a_clicker
             timer1.Interval = 1000; //Starts timer, that adds words/second to words_written
             this.KeyPress +=
                new KeyPressEventHandler(Typing);
+
+            anton  = new Anton("Anton", anton_price, anton_count, anton__words_s);
+            lasse  = new Lasse("Lasse", lasse_price, lasse_count, lasse_words_s);
+            casper = new Casper("Casper", casper_price, casper_count, casper_words_s);
+            mads   = new Mads("Mads", mads_price, mads_count, mads_words_s);
+            ezzi   = new Ezzi("Ezzi", ezzi_price, ezzi_count, ezzi_words_s);
+            thue   = new Thue("Thue", thue_price, thue_count, thue_words_s);
         }
 
         UInt64 words_written = 0;
         int _typedWords = 0;
-        Anton anton = new Anton();
-        Lasse lasse = new Lasse();
-        Casper casper = new Casper();
-        Mads mads = new Mads();
-        Ezzi ezzi = new Ezzi();
-        Thue thue = new Thue();
+        Anton anton;
+        Lasse lasse;
+        Casper casper;
+        Mads mads;
+        Ezzi ezzi;
+        Thue thue;
         
         
 
@@ -62,29 +69,30 @@ namespace A312a_clicker
         {
             if (anton.Number > 0)
             {
-                words_written += (UInt64)(2 * anton.Number);
+                words_written += (UInt64)(anton.Income());
             }
             if (lasse.Number > 0)
             {
-                words_written += (UInt64)(100 * lasse.Number);
+                words_written += (UInt64)(lasse.Income());
             }
             if (casper.Number > 0)
             {
-                words_written += (UInt64)(5000 * casper.Number);
+                words_written += (UInt64)(casper.Income());
             }
             if (mads.Number > 0)
             {
-                words_written += (UInt64)(800000 * mads.Number);
+                words_written += (UInt64)(mads.Income());
             }
             if (ezzi.Number > 0)
             {
-                words_written += (UInt64)(1000000 * ezzi.Number);
+                words_written += (UInt64)(ezzi.Income());
             }
             if (thue.Number > 0)
             {
-                words_written += (UInt64)(999999999 * thue.Number);
+                words_written += (UInt64)(thue.Income());
             }
             words_written_counter.Text = $"Words written: {words_written}";
+            
         }
 
         private void save_button_Click(object sender, EventArgs e)
@@ -97,10 +105,8 @@ namespace A312a_clicker
             if (words_written >= lasse.Price())
             {
                 words_written -= (UInt64)(lasse.Price());
+                lasse.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++lasse.Number;
-                lasse_count.Text = $"Lasses: {lasse.Number}";
-                lasse_price.Text = $"Price: {lasse.Price()}";
             }
         }
         private void Anton_Click(object sender, EventArgs e)
@@ -108,10 +114,8 @@ namespace A312a_clicker
             if (words_written >= anton.Price())
             {
                 words_written -= (UInt64)(anton.Price());
+                anton.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++anton.Number;
-                anton_count.Text = $"Antons: {anton.Number}";
-                anton_price.Text = $"Price: {anton.Price()}";
             }
         }
 
@@ -121,10 +125,8 @@ namespace A312a_clicker
             if (words_written >= casper.Price())
             {
                 words_written -= (UInt64)(casper.Price());
+                casper.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++casper.Number;
-                casper_count.Text = $"Caspers: {casper.Number}";
-                casper_price.Text = $"Price: {casper.Price()}";
             }
         }
 
@@ -135,10 +137,9 @@ namespace A312a_clicker
             if (words_written >= mads.Price())
             {
                 words_written -= (UInt64)(mads.Price());
+                mads.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++mads.Number;
-                mads_count.Text = $"Madss: {mads.Number}";
-                mads_price.Text = $"Price: {mads.Price()}";
+
             }
         }
 
@@ -147,10 +148,8 @@ namespace A312a_clicker
             if (words_written >= ezzi.Price())
             {
                 words_written -= (UInt64)(ezzi.Price());
+                ezzi.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++ezzi.Number;
-                ezzi_count.Text = $"Ezzis: {ezzi.Number}";
-                ezzi_price.Text = $"Price: {ezzi.Price()}";
             }
         }
 
@@ -159,15 +158,10 @@ namespace A312a_clicker
             if (words_written >= thue.Price())
             {
                 words_written -= (UInt64)(thue.Price());
+                thue.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-                ++thue.Number;
-                ezzi_count.Text = $"Thues: {thue.Number}";
-                ezzi_price.Text = $"Price: {thue.Price()}";
             }
         }
-
-
-
 
 
         private void lasse_price_Click(object sender, EventArgs e)
