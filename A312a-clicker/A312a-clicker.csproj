@@ -123,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\anton_upgrade_1.png" />
+    <Content Include="Resources\sharelatex_transparent_2.png" />
+    <None Include="Resources\sharelatex_transparent_4.png" />
+    <None Include="Resources\sharelatex_transparent_3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

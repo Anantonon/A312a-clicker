@@ -52,7 +52,6 @@
             this.button_casper = new System.Windows.Forms.Button();
             this.button_lasse = new System.Windows.Forms.Button();
             this.button_anton = new System.Windows.Forms.Button();
-            this.button_projekt = new System.Windows.Forms.Button();
             this.anton__words_s = new System.Windows.Forms.Label();
             this.lasse_words_s = new System.Windows.Forms.Label();
             this.casper_words_s = new System.Windows.Forms.Label();
@@ -65,9 +64,10 @@
             // words_written_counter
             // 
             this.words_written_counter.AutoSize = true;
-            this.words_written_counter.Location = new System.Drawing.Point(598, 447);
+            this.words_written_counter.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.words_written_counter.Location = new System.Drawing.Point(578, 344);
             this.words_written_counter.Name = "words_written_counter";
-            this.words_written_counter.Size = new System.Drawing.Size(84, 13);
+            this.words_written_counter.Size = new System.Drawing.Size(149, 21);
             this.words_written_counter.TabIndex = 1;
             this.words_written_counter.Text = "Words written: 0";
             // 
@@ -78,9 +78,10 @@
             // anton_count
             // 
             this.anton_count.AutoSize = true;
+            this.anton_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anton_count.Location = new System.Drawing.Point(42, 257);
             this.anton_count.Name = "anton_count";
-            this.anton_count.Size = new System.Drawing.Size(52, 13);
+            this.anton_count.Size = new System.Drawing.Size(61, 15);
             this.anton_count.TabIndex = 3;
             this.anton_count.Text = "Antons: 0";
             // 
@@ -97,9 +98,10 @@
             // anton_price
             // 
             this.anton_price.AutoSize = true;
+            this.anton_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anton_price.Location = new System.Drawing.Point(42, 244);
             this.anton_price.Name = "anton_price";
-            this.anton_price.Size = new System.Drawing.Size(43, 13);
+            this.anton_price.Size = new System.Drawing.Size(53, 15);
             this.anton_price.TabIndex = 5;
             this.anton_price.Text = "Price: 2";
             // 
@@ -114,90 +116,100 @@
             // lasse_price
             // 
             this.lasse_price.AutoSize = true;
+            this.lasse_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lasse_price.Location = new System.Drawing.Point(265, 244);
             this.lasse_price.Name = "lasse_price";
-            this.lasse_price.Size = new System.Drawing.Size(61, 13);
+            this.lasse_price.Size = new System.Drawing.Size(77, 15);
             this.lasse_price.TabIndex = 8;
             this.lasse_price.Text = "Price: 1000";
             // 
             // casper_price
             // 
             this.casper_price.AutoSize = true;
+            this.casper_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.casper_price.Location = new System.Drawing.Point(488, 244);
             this.casper_price.Name = "casper_price";
-            this.casper_price.Size = new System.Drawing.Size(73, 13);
+            this.casper_price.Size = new System.Drawing.Size(93, 15);
             this.casper_price.TabIndex = 14;
             this.casper_price.Text = "Price: 500000";
             // 
             // lasse_count
             // 
             this.lasse_count.AutoSize = true;
+            this.lasse_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lasse_count.Location = new System.Drawing.Point(265, 257);
             this.lasse_count.Name = "lasse_count";
-            this.lasse_count.Size = new System.Drawing.Size(52, 13);
+            this.lasse_count.Size = new System.Drawing.Size(61, 15);
             this.lasse_count.TabIndex = 9;
             this.lasse_count.Text = "Lasses: 0";
             // 
             // casper_count
             // 
             this.casper_count.AutoSize = true;
+            this.casper_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.casper_count.Location = new System.Drawing.Point(488, 257);
             this.casper_count.Name = "casper_count";
-            this.casper_count.Size = new System.Drawing.Size(57, 13);
+            this.casper_count.Size = new System.Drawing.Size(69, 15);
             this.casper_count.TabIndex = 15;
             this.casper_count.Text = "Caspers: 0";
             // 
             // mads_price
             // 
             this.mads_price.AutoSize = true;
+            this.mads_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mads_price.Location = new System.Drawing.Point(711, 244);
             this.mads_price.Name = "mads_price";
-            this.mads_price.Size = new System.Drawing.Size(85, 13);
+            this.mads_price.Size = new System.Drawing.Size(109, 15);
             this.mads_price.TabIndex = 16;
             this.mads_price.Text = "Price: 10000000";
             // 
             // mads_count
             // 
             this.mads_count.AutoSize = true;
+            this.mads_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mads_count.Location = new System.Drawing.Point(711, 257);
             this.mads_count.Name = "mads_count";
-            this.mads_count.Size = new System.Drawing.Size(50, 13);
+            this.mads_count.Size = new System.Drawing.Size(59, 15);
             this.mads_count.TabIndex = 17;
             this.mads_count.Text = "Madss: 0";
             // 
             // ezzi_price
             // 
             this.ezzi_price.AutoSize = true;
+            this.ezzi_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ezzi_price.Location = new System.Drawing.Point(934, 244);
             this.ezzi_price.Name = "ezzi_price";
-            this.ezzi_price.Size = new System.Drawing.Size(97, 13);
+            this.ezzi_price.Size = new System.Drawing.Size(125, 15);
             this.ezzi_price.TabIndex = 18;
             this.ezzi_price.Text = "Price: 5000000000";
             // 
             // ezzi_count
             // 
             this.ezzi_count.AutoSize = true;
+            this.ezzi_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ezzi_count.Location = new System.Drawing.Point(934, 257);
             this.ezzi_count.Name = "ezzi_count";
-            this.ezzi_count.Size = new System.Drawing.Size(43, 13);
+            this.ezzi_count.Size = new System.Drawing.Size(52, 15);
             this.ezzi_count.TabIndex = 19;
             this.ezzi_count.Text = "Ezzis: 0";
             // 
             // thue_price
             // 
             this.thue_price.AutoSize = true;
+            this.thue_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thue_price.Location = new System.Drawing.Point(1157, 244);
             this.thue_price.Name = "thue_price";
-            this.thue_price.Size = new System.Drawing.Size(109, 13);
+            this.thue_price.Size = new System.Drawing.Size(141, 15);
             this.thue_price.TabIndex = 20;
             this.thue_price.Text = "Price: 999999999999";
             // 
             // thue_count
             // 
             this.thue_count.AutoSize = true;
+            this.thue_count.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thue_count.Location = new System.Drawing.Point(1157, 257);
             this.thue_count.Name = "thue_count";
-            this.thue_count.Size = new System.Drawing.Size(49, 13);
+            this.thue_count.Size = new System.Drawing.Size(56, 15);
             this.thue_count.TabIndex = 21;
             this.thue_count.Text = "Thues: 0";
             // 
@@ -276,67 +288,63 @@
             this.button_anton.UseVisualStyleBackColor = true;
             this.button_anton.Click += new System.EventHandler(this.Anton_Click);
             // 
-            // button_projekt
-            // 
-            this.button_projekt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_projekt.Image = global::A312a_clicker.Properties.Resources.sharelatex_transparent;
-            this.button_projekt.Location = new System.Drawing.Point(601, 281);
-            this.button_projekt.Name = "button_projekt";
-            this.button_projekt.Size = new System.Drawing.Size(179, 163);
-            this.button_projekt.TabIndex = 0;
-            this.button_projekt.UseVisualStyleBackColor = true;
-            // 
             // anton__words_s
             // 
             this.anton__words_s.AutoSize = true;
-            this.anton__words_s.Location = new System.Drawing.Point(163, 244);
+            this.anton__words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anton__words_s.Location = new System.Drawing.Point(152, 257);
             this.anton__words_s.Name = "anton__words_s";
-            this.anton__words_s.Size = new System.Drawing.Size(60, 13);
+            this.anton__words_s.Size = new System.Drawing.Size(71, 15);
             this.anton__words_s.TabIndex = 23;
             this.anton__words_s.Text = "Words/s: 0";
             // 
             // lasse_words_s
             // 
             this.lasse_words_s.AutoSize = true;
-            this.lasse_words_s.Location = new System.Drawing.Point(386, 244);
+            this.lasse_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lasse_words_s.Location = new System.Drawing.Point(375, 257);
             this.lasse_words_s.Name = "lasse_words_s";
-            this.lasse_words_s.Size = new System.Drawing.Size(60, 13);
+            this.lasse_words_s.Size = new System.Drawing.Size(71, 15);
             this.lasse_words_s.TabIndex = 24;
             this.lasse_words_s.Text = "Words/s: 0";
             // 
             // casper_words_s
             // 
             this.casper_words_s.AutoSize = true;
-            this.casper_words_s.Location = new System.Drawing.Point(609, 244);
+            this.casper_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.casper_words_s.Location = new System.Drawing.Point(598, 257);
             this.casper_words_s.Name = "casper_words_s";
-            this.casper_words_s.Size = new System.Drawing.Size(60, 13);
+            this.casper_words_s.Size = new System.Drawing.Size(71, 15);
             this.casper_words_s.TabIndex = 25;
             this.casper_words_s.Text = "Words/s: 0";
             // 
             // mads_words_s
             // 
             this.mads_words_s.AutoSize = true;
-            this.mads_words_s.Location = new System.Drawing.Point(832, 244);
+            this.mads_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mads_words_s.Location = new System.Drawing.Point(826, 257);
             this.mads_words_s.Name = "mads_words_s";
-            this.mads_words_s.Size = new System.Drawing.Size(60, 13);
+            this.mads_words_s.Size = new System.Drawing.Size(71, 15);
             this.mads_words_s.TabIndex = 26;
             this.mads_words_s.Text = "Words/s: 0";
             // 
             // ezzi_words_s
             // 
             this.ezzi_words_s.AutoSize = true;
-            this.ezzi_words_s.Location = new System.Drawing.Point(1055, 244);
+            this.ezzi_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ezzi_words_s.Location = new System.Drawing.Point(1044, 257);
             this.ezzi_words_s.Name = "ezzi_words_s";
-            this.ezzi_words_s.Size = new System.Drawing.Size(60, 13);
+            this.ezzi_words_s.Size = new System.Drawing.Size(71, 15);
             this.ezzi_words_s.TabIndex = 27;
             this.ezzi_words_s.Text = "Words/s: 0";
             // 
             // thue_words_s
             // 
             this.thue_words_s.AutoSize = true;
-            this.thue_words_s.Location = new System.Drawing.Point(1278, 244);
+            this.thue_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thue_words_s.Location = new System.Drawing.Point(1267, 257);
             this.thue_words_s.Name = "thue_words_s";
-            this.thue_words_s.Size = new System.Drawing.Size(60, 13);
+            this.thue_words_s.Size = new System.Drawing.Size(71, 15);
             this.thue_words_s.TabIndex = 28;
             this.thue_words_s.Text = "Words/s: 0";
             // 
@@ -354,6 +362,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::A312a_clicker.Properties.Resources.sharelatex_transparent_4;
             this.ClientSize = new System.Drawing.Size(1383, 482);
             this.Controls.Add(this.load_button);
             this.Controls.Add(this.thue_words_s);
@@ -384,7 +393,8 @@
             this.Controls.Add(this.anton_count);
             this.Controls.Add(this.button_anton);
             this.Controls.Add(this.words_written_counter);
-            this.Controls.Add(this.button_projekt);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "A312a Clicker";
@@ -394,8 +404,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_projekt;
         private System.Windows.Forms.Label words_written_counter;
         private System.Windows.Forms.Button button_anton;
         private System.Windows.Forms.Timer timer1;

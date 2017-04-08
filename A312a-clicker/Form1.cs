@@ -175,7 +175,7 @@ namespace A312a_clicker
                 AllPeople[5].Purchase();
                 if (AllPeople[5].Number == 5)
                 {
-                    UpgradeCreater("thue.png", 4);
+                    UpgradeCreater("thue.png", 5);
                     AllPeople[5].Upgrade1_true = true;
                 }
                 words_written_counter.Text = $"Words written: {words_written}";
@@ -192,17 +192,44 @@ namespace A312a_clicker
         int ycoordinate = 0;
         private void UpgradeCreater(string image_path, int person_to_upgrade)
         {
+           
             /* The files are in \Source\Repos\A312a-clicker\A312a-clicker\bin\Debug, so cannot find file in resource folder yet */
+            
             if (xcoordinate < 560) {
-                upgrade_panel.Controls.Add(new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                upgrade_panel.Controls.Add(upgrade_button);
+                upgrade_button.Click += Upgrade_button_Click;
                 xcoordinate += 190;
             }
             else
             {
                 xcoordinate = 0;
                 ycoordinate += 90;
-                upgrade_panel.Controls.Add(new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                upgrade_panel.Controls.Add(upgrade_button);
+                upgrade_button.Click += Upgrade_button_Click;
                 xcoordinate += 190;
+            }
+        }
+
+        private void Upgrade_button_Click(object sender, EventArgs e)
+        {
+            xcoordinate = 0;
+            ycoordinate = 0;
+            foreach (Upgrade_button button in upgrade_panel.Controls)
+            {
+                if (xcoordinate < 560)
+                {
+                    button.Location = (new Point(xcoordinate, ycoordinate));
+                    xcoordinate += 190;
+                }
+                else
+                {
+                    xcoordinate = 0;
+                    ycoordinate += 90;
+                    button.Location = (new Point(xcoordinate, ycoordinate));
+                    xcoordinate += 190;
+                }
             }
         }
     }
