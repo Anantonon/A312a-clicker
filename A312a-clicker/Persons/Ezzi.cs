@@ -19,5 +19,15 @@ namespace A312a_clicker
         {
             return 5000000000 + 10000000 * (2 * Math.Pow(Number, 2));
         }
+
+        public override void Upgrade()
+        {
+            if (Upgrade1_true)
+            {
+                Upgrade_Factor *= 5;
+            }
+            Refresh();
+
+        }
     }
 }

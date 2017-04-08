@@ -25,12 +25,15 @@ namespace A312a_clicker
         public long Number = 0;
         public long Words_second;
 
+        public bool Upgrade1_true;
+        public abstract void Upgrade();
+        public double Upgrade_Factor = 1;
 
         public abstract double Price();
 
         public long Income()
         {
-            return Words_second * Number;
+            return (long)(Words_second * Number * Upgrade_Factor);
         }
         public void Purchase()
         {

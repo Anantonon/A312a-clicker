@@ -11,36 +11,29 @@ namespace A312a_clicker
 {
     class Upgrade_button : Button
     {
-        /* Det meste i denne klasse er kopieret fra Thomas' calculator eksempel,
-         * så har ikke rigtigt nogen idé om, hvordan det fungerer (endnu).
-         * Pointen er, at man skal kunne oprette upgrade_buttons dynamisk,
-         * med billede, person at opgradere og hvor meget de skal opgraderes med */
-
-
-        public delegate void UpgradeClickEventHandler(Upgrade_button sender, int number);
-
-        public event UpgradeClickEventHandler UpgradeClick;
-
-        public Upgrade_button() {}
-
-        public Upgrade_button(string image_filepath, string person_to_upgrade, double upgrade_to_wpm)
+        /* When created, the upgrade_button will get an image from the filepath, 
+         * it will know which person to upgrade,
+         * and it has access to the array of all people, so that it can call their methods*/
+        public Upgrade_button(string image_filepath, int person_to_upgrade, ref Person[] AllPeople, Point Location)
         {
             UseVisualStyleBackColor = true;
-            Size = new Size(27, 27);
-            Image = Image.FromFile(image_filepath);
+            Size = new Size(180, 80);
+            Image = Image.FromFile($@"{image_filepath}");
             Click += Upgrade_button_click;
             this.person_to_upgrade = person_to_upgrade;
-            this.upgrade_to_wpm = upgrade_to_wpm;
+            this.AllPeople = AllPeople;
+            this.Location = Location;
         }
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override string Text { get; set; }
 
-        string person_to_upgrade;
-        double upgrade_to_wpm;
+        int person_to_upgrade;
+        Person[] AllPeople;
 
         void Upgrade_button_click(object sender, EventArgs e)
         {
-            
+            AllPeople[person_to_upgrade].Upgrade();
+            Parent.Controls.Remove(this);
         }
     }
 }

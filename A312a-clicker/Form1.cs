@@ -30,7 +30,7 @@ namespace A312a_clicker
 
         UInt64 words_written = 0;
         int _typedWords = 0;
-        Person[] AllPeople = new Person[6];
+        public Person[] AllPeople = new Person[6];
 
         void Typing(object sender, KeyPressEventArgs e)
         {
@@ -97,6 +97,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[0].Price());
                 AllPeople[0].Purchase();
+                if (AllPeople[0].Number == 5)
+                {
+                    UpgradeCreater("anton_upgrade_1.png", 0);
+                    AllPeople[0].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -107,6 +112,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[1].Price());
                 AllPeople[1].Purchase();
+                if (AllPeople[1].Number == 5)
+                {
+                    UpgradeCreater("lasse1.png", 1);
+                    AllPeople[1].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -118,6 +128,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[2].Price());
                 AllPeople[2].Purchase();
+                if (AllPeople[2].Number == 5)
+                {
+                    UpgradeCreater("casper1.png", 2);
+                    AllPeople[2].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -128,6 +143,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[3].Price());
                 AllPeople[3].Purchase();
+                if (AllPeople[3].Number == 5)
+                {
+                    UpgradeCreater("mads.png", 3);
+                    AllPeople[3].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -138,6 +158,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[4].Price());
                 AllPeople[4].Purchase();
+                if (AllPeople[4].Number == 5)
+                {
+                    UpgradeCreater("ezzi.png", 4);
+                    AllPeople[4].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -148,6 +173,11 @@ namespace A312a_clicker
             {
                 words_written -= (UInt64)(AllPeople[5].Price());
                 AllPeople[5].Purchase();
+                if (AllPeople[5].Number == 5)
+                {
+                    UpgradeCreater("thue.png", 4);
+                    AllPeople[5].Upgrade1_true = true;
+                }
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
@@ -156,6 +186,24 @@ namespace A312a_clicker
         {
             words_written += 1000000000000000000;
             words_written_counter.Text = $"Words written: {words_written}";
+        }
+
+        int xcoordinate = 0;
+        int ycoordinate = 0;
+        private void UpgradeCreater(string image_path, int person_to_upgrade)
+        {
+            /* The files are in \Source\Repos\A312a-clicker\A312a-clicker\bin\Debug, so cannot find file in resource folder yet */
+            if (xcoordinate < 560) {
+                upgrade_panel.Controls.Add(new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                xcoordinate += 190;
+            }
+            else
+            {
+                xcoordinate = 0;
+                ycoordinate += 90;
+                upgrade_panel.Controls.Add(new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                xcoordinate += 190;
+            }
         }
     }
 }

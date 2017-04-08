@@ -86,7 +86,7 @@
             // 
             // save_button
             // 
-            this.save_button.Location = new System.Drawing.Point(12, 447);
+            this.save_button.Location = new System.Drawing.Point(12, 453);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(75, 23);
             this.save_button.TabIndex = 4;
@@ -105,9 +105,10 @@
             // 
             // upgrade_panel
             // 
+            this.upgrade_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.upgrade_panel.Location = new System.Drawing.Point(12, 277);
             this.upgrade_panel.Name = "upgrade_panel";
-            this.upgrade_panel.Size = new System.Drawing.Size(566, 163);
+            this.upgrade_panel.Size = new System.Drawing.Size(560, 170);
             this.upgrade_panel.TabIndex = 6;
             // 
             // lasse_price
@@ -202,7 +203,7 @@
             // 
             // cheat_button
             // 
-            this.cheat_button.Location = new System.Drawing.Point(174, 446);
+            this.cheat_button.Location = new System.Drawing.Point(174, 453);
             this.cheat_button.Name = "cheat_button";
             this.cheat_button.Size = new System.Drawing.Size(152, 23);
             this.cheat_button.TabIndex = 22;
@@ -341,7 +342,7 @@
             // 
             // load_button
             // 
-            this.load_button.Location = new System.Drawing.Point(93, 446);
+            this.load_button.Location = new System.Drawing.Point(93, 453);
             this.load_button.Name = "load_button";
             this.load_button.Size = new System.Drawing.Size(75, 23);
             this.load_button.TabIndex = 29;
