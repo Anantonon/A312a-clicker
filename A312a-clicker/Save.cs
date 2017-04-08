@@ -11,11 +11,9 @@ namespace A312a_clicker
     public static class Save
     {
         public static void SaveGame(
-            string words, 
-            string anton, string lasse, string casper,
-            string mads, string ezzi, string thue)
+            string [] stuff)
         {
-            string[] stuff = {words, anton, lasse, casper, mads, ezzi, thue};
+            //string[] stuff = {words, anton, lasse, casper, mads, ezzi, thue};
 
             using (StreamWriter sw = new StreamWriter("savegame1.txt"))
             {

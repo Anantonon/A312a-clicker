@@ -20,23 +20,18 @@ namespace A312a_clicker
             this.KeyPress +=
                new KeyPressEventHandler(Typing);
 
-            anton  = new Anton("Anton", anton_price, anton_count, anton__words_s);
-            lasse  = new Lasse("Lasse", lasse_price, lasse_count, lasse_words_s);
-            casper = new Casper("Casper", casper_price, casper_count, casper_words_s);
-            mads   = new Mads("Mads", mads_price, mads_count, mads_words_s);
-            ezzi   = new Ezzi("Ezzi", ezzi_price, ezzi_count, ezzi_words_s);
-            thue   = new Thue("Thue", thue_price, thue_count, thue_words_s);
+            AllPeople[0] = new Anton("Anton", anton_price, anton_count, anton__words_s);
+            AllPeople[1] = new Lasse("Lasse", lasse_price, lasse_count, lasse_words_s);
+            AllPeople[2] = new Casper("Casper", casper_price, casper_count, casper_words_s);
+            AllPeople[3] = new Mads("Mads", mads_price, mads_count, mads_words_s);
+            AllPeople[4] = new Ezzi("Ezzi", ezzi_price, ezzi_count, ezzi_words_s);
+            AllPeople[5] = new Thue("Thue", thue_price, thue_count, thue_words_s);
         }
 
         UInt64 words_written = 0;
         int _typedWords = 0;
-        Anton anton;
-        Lasse lasse;
-        Casper casper;
-        Mads mads;
-        Ezzi ezzi;
-        Thue thue;
-        
+        Person[] AllPeople = new Person[6];
+
         void Typing(object sender, KeyPressEventArgs e)
         {
             if (_typedWords < 5)
@@ -53,117 +48,106 @@ namespace A312a_clicker
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (anton.Number > 0)
+            for(int i = 0; i < 6; ++i)
             {
-                words_written += (UInt64)(anton.Income());
-            }
-            if (lasse.Number > 0)
-            {
-                words_written += (UInt64)(lasse.Income());
-            }
-            if (casper.Number > 0)
-            {
-                words_written += (UInt64)(casper.Income());
-            }
-            if (mads.Number > 0)
-            {
-                words_written += (UInt64)(mads.Income());
-            }
-            if (ezzi.Number > 0)
-            {
-                words_written += (UInt64)(ezzi.Income());
-            }
-            if (thue.Number > 0)
-            {
-                words_written += (UInt64)(thue.Income());
+                if(AllPeople[i].Number > 0)
+                {
+                    words_written += (UInt64)(AllPeople[i].Income());
+                }
             }
             words_written_counter.Text = $"Words written: {words_written}";
             
         }
 
+        /* Saves words first, then the for loop saves all people */
         private void save_button_Click(object sender, EventArgs e)
         {
-            Save.SaveGame(
-                words_written.ToString(),
-                anton.Number.ToString(),
-                lasse.Number.ToString(),
-                casper.Number.ToString(),
-                mads.Number.ToString(),
-                ezzi.Number.ToString(),
-                thue.Number.ToString());
+            string[] AllPeopleSave = new string[7];
+
+            AllPeopleSave[0] = words_written.ToString();
+
+            for (int i = 1; i < 7; ++i)
+            {
+                AllPeopleSave[i] = AllPeople[i-1].Number.ToString();
+            }
+
+            Save.SaveGame(AllPeopleSave);
             Save.SaveOrLoadSuccessful(true);
         }
-
+        
+        /*Loads words first, then the for loop loads all people*/
         private void load_button_Click(object sender, EventArgs e)
         {
             string[] savegame = Save.LoadGame();
 
-            words_written = Convert.ToUInt64(savegame[0]); words_written_counter.Text = $"Words written: {words_written}";
-            anton.Number = Convert.ToInt64(savegame[1]); anton.Refresh();
-            lasse.Number = Convert.ToInt64(savegame[2]); lasse.Refresh();
-            casper.Number = Convert.ToInt64(savegame[3]); casper.Refresh();
-            mads.Number = Convert.ToInt64(savegame[4]); mads.Refresh();
-            ezzi.Number = Convert.ToInt64(savegame[5]); ezzi.Refresh();
-            thue.Number = Convert.ToInt64(savegame[6]); thue.Refresh();
+            words_written = Convert.ToUInt64(savegame[0]);
+            words_written_counter.Text = $"Words written: {words_written}";
 
+            for (int i = 1; i < 7; ++i)
+            {
+                AllPeople[i-1].Number = Convert.ToInt64(savegame[i]);
+                AllPeople[i-1].Refresh();
+            }
             Save.SaveOrLoadSuccessful(false);
+        }
+
+        private void Anton_Click(object sender, EventArgs e)
+        {
+            if (words_written >= AllPeople[0].Price())
+            {
+                words_written -= (UInt64)(AllPeople[0].Price());
+                AllPeople[0].Purchase();
+                words_written_counter.Text = $"Words written: {words_written}";
+            }
         }
 
         private void Lasse_Click(object sender, EventArgs e)
         {
-            if (words_written >= lasse.Price())
+            if (words_written >= AllPeople[1].Price())
             {
-                words_written -= (UInt64)(lasse.Price());
-                lasse.Purchase();
+                words_written -= (UInt64)(AllPeople[1].Price());
+                AllPeople[1].Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
-        private void Anton_Click(object sender, EventArgs e)
-        {
-            if (words_written >= anton.Price())
-            {
-                words_written -= (UInt64)(anton.Price());
-                anton.Purchase();
-                words_written_counter.Text = $"Words written: {words_written}";
-            }
-        }
+        
 
         private void button_casper_Click(object sender, EventArgs e)
         {
-            if (words_written >= casper.Price())
+            if (words_written >= AllPeople[2].Price())
             {
-                words_written -= (UInt64)(casper.Price());
-                casper.Purchase();
+                words_written -= (UInt64)(AllPeople[2].Price());
+                AllPeople[2].Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
 
         private void button_mads_Click(object sender, EventArgs e)
         {
-            if (words_written >= mads.Price())
+            if (words_written >= AllPeople[3].Price())
             {
-                words_written -= (UInt64)(mads.Price());
-                mads.Purchase();
+                words_written -= (UInt64)(AllPeople[3].Price());
+                AllPeople[3].Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
 
         private void button_ezzi_Click(object sender, EventArgs e)
         {
-            if (words_written >= ezzi.Price())
+            if (words_written >= AllPeople[4].Price())
             {
-                words_written -= (UInt64)(ezzi.Price());
-                ezzi.Purchase();
+                words_written -= (UInt64)(AllPeople[4].Price());
+                AllPeople[4].Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
 
         private void button_thue_Click(object sender, EventArgs e)
         {
-            if (words_written >= thue.Price())
+            if (words_written >= AllPeople[5].Price())
             {
-                words_written -= (UInt64)(thue.Price());
-                thue.Purchase();
+                words_written -= (UInt64)(AllPeople[5].Price());
+                AllPeople[5].Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
             }
         }
