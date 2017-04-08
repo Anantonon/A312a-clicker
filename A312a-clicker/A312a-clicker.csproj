@@ -46,13 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anton.cs" />
-    <Compile Include="Casper.cs" />
-    <Compile Include="Ezzi.cs" />
-    <Compile Include="Lasse.cs" />
-    <Compile Include="Mads.cs" />
+    <Compile Include="Persons\Anton.cs" />
+    <Compile Include="Persons\Casper.cs" />
+    <Compile Include="Persons\Ezzi.cs" />
+    <Compile Include="Persons\Lasse.cs" />
+    <Compile Include="Persons\Mads.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Thue.cs" />
+    <Compile Include="Persons\Thue.cs" />
     <Compile Include="Upgrade_button.cs">
       <SubType>Component</SubType>
     </Compile>

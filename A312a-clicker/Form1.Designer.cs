@@ -204,9 +204,9 @@
             // 
             this.cheat_button.Location = new System.Drawing.Point(174, 446);
             this.cheat_button.Name = "cheat_button";
-            this.cheat_button.Size = new System.Drawing.Size(134, 23);
+            this.cheat_button.Size = new System.Drawing.Size(152, 23);
             this.cheat_button.TabIndex = 22;
-            this.cheat_button.Text = "Give 100 million words";
+            this.cheat_button.Text = "Give 100 quadrillion words";
             this.cheat_button.UseVisualStyleBackColor = true;
             this.cheat_button.Click += new System.EventHandler(this.cheat_button_Click);
             // 
@@ -385,7 +385,7 @@
             this.Controls.Add(this.words_written_counter);
             this.Controls.Add(this.button_projekt);
             this.KeyPreview = true;
-            this.Name = "A312a Clicker";
+            this.Name = "Form1";
             this.Text = "A312a Clicker";
             this.ResumeLayout(false);
             this.PerformLayout();

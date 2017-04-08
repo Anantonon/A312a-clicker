@@ -154,7 +154,7 @@ namespace A312a_clicker
 
         private void cheat_button_Click(object sender, EventArgs e)
         {
-            words_written += 100000000;
+            words_written += 1000000000000000000;
             words_written_counter.Text = $"Words written: {words_written}";
         }
     }

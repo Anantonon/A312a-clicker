@@ -7,17 +7,17 @@ using System.Windows.Forms;
 
 namespace A312a_clicker
 {
-    public class Ezzi : Person
+    public class Thue : Person
     {
-        public Ezzi (string Name, Label person_price, Label person_count, Label person_words_s)
+        public Thue(string Name, Label person_price, Label person_count, Label person_words_s)
             : base(Name, person_price,  person_count,  person_words_s)
         {
-            Words_second = 1000000;
+            Words_second = 999999999;
         }
 
         public override double Price()
         {
-            return 5000000000 + 1.6 * (2 * Math.Pow(Number, 2));
+            return 999999999999 + 800000000 * (2 * Math.Pow(Number, 2));
         }
     }
 }
