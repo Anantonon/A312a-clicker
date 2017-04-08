@@ -37,19 +37,6 @@ namespace A312a_clicker
         Ezzi ezzi;
         Thue thue;
         
-        
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-        private void Projekt_Click(object sender, EventArgs e)
-        {
-
-        }
-        
         void Typing(object sender, KeyPressEventArgs e)
         {
             if (_typedWords < 5)
@@ -62,7 +49,6 @@ namespace A312a_clicker
                 ++words_written;
                 words_written_counter.Text = $"Words written: {words_written}";
             }
-            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -97,7 +83,30 @@ namespace A312a_clicker
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            Save.SaveGame(words_written.ToString(), anton.Number.ToString());
+            Save.SaveGame(
+                words_written.ToString(),
+                anton.Number.ToString(),
+                lasse.Number.ToString(),
+                casper.Number.ToString(),
+                mads.Number.ToString(),
+                ezzi.Number.ToString(),
+                thue.Number.ToString());
+            Save.SaveOrLoadSuccessful(true);
+        }
+
+        private void load_button_Click(object sender, EventArgs e)
+        {
+            string[] savegame = Save.LoadGame();
+
+            words_written = Convert.ToUInt64(savegame[0]); words_written_counter.Text = $"Words written: {words_written}";
+            anton.Number = Convert.ToInt64(savegame[1]); anton.Refresh();
+            lasse.Number = Convert.ToInt64(savegame[2]); lasse.Refresh();
+            casper.Number = Convert.ToInt64(savegame[3]); casper.Refresh();
+            mads.Number = Convert.ToInt64(savegame[4]); mads.Refresh();
+            ezzi.Number = Convert.ToInt64(savegame[5]); ezzi.Refresh();
+            thue.Number = Convert.ToInt64(savegame[6]); thue.Refresh();
+
+            Save.SaveOrLoadSuccessful(false);
         }
 
         private void Lasse_Click(object sender, EventArgs e)
@@ -119,7 +128,6 @@ namespace A312a_clicker
             }
         }
 
-
         private void button_casper_Click(object sender, EventArgs e)
         {
             if (words_written >= casper.Price())
@@ -130,8 +138,6 @@ namespace A312a_clicker
             }
         }
 
-
-
         private void button_mads_Click(object sender, EventArgs e)
         {
             if (words_written >= mads.Price())
@@ -139,7 +145,6 @@ namespace A312a_clicker
                 words_written -= (UInt64)(mads.Price());
                 mads.Purchase();
                 words_written_counter.Text = $"Words written: {words_written}";
-
             }
         }
 
@@ -163,17 +168,10 @@ namespace A312a_clicker
             }
         }
 
-
-        private void lasse_price_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cheat_button_Click(object sender, EventArgs e)
         {
             words_written += 100000000;
             words_written_counter.Text = $"Words written: {words_written}";
-
         }
     }
 }

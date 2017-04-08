@@ -59,6 +59,7 @@
             this.mads_words_s = new System.Windows.Forms.Label();
             this.ezzi_words_s = new System.Windows.Forms.Label();
             this.thue_words_s = new System.Windows.Forms.Label();
+            this.load_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // words_written_counter
@@ -69,7 +70,6 @@
             this.words_written_counter.Size = new System.Drawing.Size(84, 13);
             this.words_written_counter.TabIndex = 1;
             this.words_written_counter.Text = "Words written: 0";
-            this.words_written_counter.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
@@ -118,7 +118,6 @@
             this.lasse_price.Size = new System.Drawing.Size(61, 13);
             this.lasse_price.TabIndex = 8;
             this.lasse_price.Text = "Price: 1000";
-            this.lasse_price.Click += new System.EventHandler(this.lasse_price_Click);
             // 
             // casper_price
             // 
@@ -203,7 +202,7 @@
             // 
             // cheat_button
             // 
-            this.cheat_button.Location = new System.Drawing.Point(94, 447);
+            this.cheat_button.Location = new System.Drawing.Point(174, 446);
             this.cheat_button.Name = "cheat_button";
             this.cheat_button.Size = new System.Drawing.Size(134, 23);
             this.cheat_button.TabIndex = 22;
@@ -285,7 +284,6 @@
             this.button_projekt.Size = new System.Drawing.Size(179, 163);
             this.button_projekt.TabIndex = 0;
             this.button_projekt.UseVisualStyleBackColor = true;
-            this.button_projekt.Click += new System.EventHandler(this.Projekt_Click);
             // 
             // anton__words_s
             // 
@@ -341,11 +339,22 @@
             this.thue_words_s.TabIndex = 28;
             this.thue_words_s.Text = "Words/s: 0";
             // 
+            // load_button
+            // 
+            this.load_button.Location = new System.Drawing.Point(93, 446);
+            this.load_button.Name = "load_button";
+            this.load_button.Size = new System.Drawing.Size(75, 23);
+            this.load_button.TabIndex = 29;
+            this.load_button.Text = "Load game";
+            this.load_button.UseVisualStyleBackColor = true;
+            this.load_button.Click += new System.EventHandler(this.load_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1367, 482);
+            this.ClientSize = new System.Drawing.Size(1383, 482);
+            this.Controls.Add(this.load_button);
             this.Controls.Add(this.thue_words_s);
             this.Controls.Add(this.ezzi_words_s);
             this.Controls.Add(this.mads_words_s);
@@ -376,7 +385,7 @@
             this.Controls.Add(this.words_written_counter);
             this.Controls.Add(this.button_projekt);
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "A312a Clicker";
             this.Text = "A312a Clicker";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -415,6 +424,7 @@
         private System.Windows.Forms.Label mads_words_s;
         private System.Windows.Forms.Label ezzi_words_s;
         private System.Windows.Forms.Label thue_words_s;
+        private System.Windows.Forms.Button load_button;
     }
 }
 
