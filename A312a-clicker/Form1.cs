@@ -29,9 +29,11 @@ namespace A312a_clicker
         }
 
         UInt64 words_written = 0;
+        string words_written_string;
         int _typedWords = 0;
         public Person[] AllPeople = new Person[6];
         Event events;
+        public static bool ConvertToPrettyNumbers = true;
 
         void Typing(object sender, KeyPressEventArgs e)
         {
@@ -43,8 +45,19 @@ namespace A312a_clicker
             {
                 _typedWords = 1;
                 ++words_written;
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
+        }
+
+        void RefreshWords()
+        {
+            words_written_string = words_written.ToString();
+            if (ConvertToPrettyNumbers)
+            {
+                words_written_string = NumberConvert.ConvertIt(words_written);
+            }
+            words_written_counter.Text = $"Words written: {words_written_string}";
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -56,7 +69,7 @@ namespace A312a_clicker
                     words_written += (UInt64)(AllPeople[i].Income());
                 }
             }
-            words_written_counter.Text = $"Words written: {words_written}";
+            RefreshWords();
             
         }
 
@@ -82,7 +95,7 @@ namespace A312a_clicker
             string[] savegame = Save.LoadGame();
 
             words_written = Convert.ToUInt64(savegame[0]);
-            words_written_counter.Text = $"Words written: {words_written}";
+            RefreshWords();
 
             for (int i = 1; i < 7; ++i)
             {
@@ -103,7 +116,7 @@ namespace A312a_clicker
                     UpgradeCreater("anton_upgrade_1.png", 0);
                     AllPeople[0].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
 
@@ -118,7 +131,7 @@ namespace A312a_clicker
                     UpgradeCreater("lasse1.png", 1);
                     AllPeople[1].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
         
@@ -134,7 +147,7 @@ namespace A312a_clicker
                     UpgradeCreater("casper1.png", 2);
                     AllPeople[2].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
 
@@ -149,7 +162,7 @@ namespace A312a_clicker
                     UpgradeCreater("mads.png", 3);
                     AllPeople[3].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
 
@@ -164,7 +177,7 @@ namespace A312a_clicker
                     UpgradeCreater("ezzi.png", 4);
                     AllPeople[4].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
 
@@ -179,14 +192,14 @@ namespace A312a_clicker
                     UpgradeCreater("thue.png", 5);
                     AllPeople[5].Upgrade1_true = true;
                 }
-                words_written_counter.Text = $"Words written: {words_written}";
+                RefreshWords();
             }
         }
 
         private void cheat_button_Click(object sender, EventArgs e)
         {
             words_written += 1000000000000000000;
-            words_written_counter.Text = $"Words written: {words_written}";
+            RefreshWords();
         }
 
         int xcoordinate = 0;
@@ -231,6 +244,16 @@ namespace A312a_clicker
                     button.Location = (new Point(xcoordinate, ycoordinate));
                     xcoordinate += 190;
                 }
+            }
+        }
+
+        private void pretty_numbers_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            ConvertToPrettyNumbers = pretty_numbers_checkbox.Checked;
+            RefreshWords();
+            for(int i = 0; i <= 5; ++i)
+            {
+                AllPeople[i].Refresh();
             }
         }
 

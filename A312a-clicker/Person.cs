@@ -42,9 +42,18 @@ namespace A312a_clicker
         }
         public void Refresh()
         {
-            _price_label.Text = $"Price: {Price()}";
-            _count_label.Text = $"{Name}s: {Number}";
-            _words_s_label.Text = $"Words/s: {Income()}";
+            if (Form1.ConvertToPrettyNumbers)
+            {
+                _price_label.Text = $"Price: {NumberConvert.ConvertIt((ulong)Price())}";
+                _count_label.Text = $"{Name}s: {Number}";
+                _words_s_label.Text = $"Words/s: {NumberConvert.ConvertIt((ulong)Income())}";
+            }
+            else
+            {
+                _price_label.Text = $"Price: {Price()}";
+                _count_label.Text = $"{Name}s: {Number}";
+                _words_s_label.Text = $"Words/s: {Income()}";
+            }
         }
 
     }
