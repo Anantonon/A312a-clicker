@@ -59,6 +59,7 @@
             this.ezzi_words_s = new System.Windows.Forms.Label();
             this.thue_words_s = new System.Windows.Forms.Label();
             this.load_button = new System.Windows.Forms.Button();
+            this.EventTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // words_written_counter
@@ -73,6 +74,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // anton_count
@@ -358,6 +360,11 @@
             this.load_button.UseVisualStyleBackColor = true;
             this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
+            // EventTimer
+            // 
+            this.EventTimer.Interval = 300000;
+            this.EventTimer.Tick += new System.EventHandler(this.EventTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +441,7 @@
         private System.Windows.Forms.Label ezzi_words_s;
         private System.Windows.Forms.Label thue_words_s;
         private System.Windows.Forms.Button load_button;
+        private System.Windows.Forms.Timer EventTimer;
     }
 }
 

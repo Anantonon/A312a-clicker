@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs" />
     <Compile Include="Persons\Anton.cs" />
     <Compile Include="Persons\Casper.cs" />
     <Compile Include="Persons\Ezzi.cs" />

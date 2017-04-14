@@ -16,7 +16,6 @@ namespace A312a_clicker
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 1000; //Starts timer, that adds words/second to words_written
             this.KeyPress +=
                new KeyPressEventHandler(Typing);
 
@@ -26,11 +25,13 @@ namespace A312a_clicker
             AllPeople[3] = new Mads("Mads", mads_price, mads_count, mads_words_s);
             AllPeople[4] = new Ezzi("Ezzi", ezzi_price, ezzi_count, ezzi_words_s);
             AllPeople[5] = new Thue("Thue", thue_price, thue_count, thue_words_s);
+            events = new Event(ref AllPeople);
         }
 
         UInt64 words_written = 0;
         int _typedWords = 0;
         public Person[] AllPeople = new Person[6];
+        Event events;
 
         void Typing(object sender, KeyPressEventArgs e)
         {
@@ -231,6 +232,23 @@ namespace A312a_clicker
                     xcoordinate += 190;
                 }
             }
+        }
+
+        Random random = new Random();
+        //Calls a random event every 5 minutes
+        private void EventTimer_Tick(object sender, EventArgs e)
+        {
+           /* if (events.Change)
+            {
+                events.Reset();
+                events.Change = false;
+            }
+
+            if(random.Next(0,2) == 0)
+            {
+                events.Events[random.Next(0, events.Events.Count)]();
+                events.Change = true;
+            }*/
         }
     }
 }
