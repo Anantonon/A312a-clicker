@@ -59,6 +59,7 @@
             this.ezzi_words_s = new System.Windows.Forms.Label();
             this.thue_words_s = new System.Windows.Forms.Label();
             this.load_button = new System.Windows.Forms.Button();
+            this.pretty_numbers_checkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // words_written_counter
@@ -159,9 +160,9 @@
             this.mads_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mads_price.Location = new System.Drawing.Point(711, 244);
             this.mads_price.Name = "mads_price";
-            this.mads_price.Size = new System.Drawing.Size(109, 15);
+            this.mads_price.Size = new System.Drawing.Size(125, 15);
             this.mads_price.TabIndex = 16;
-            this.mads_price.Text = "Price: 10000000";
+            this.mads_price.Text = "Price: 10.00 Million";
             // 
             // mads_count
             // 
@@ -179,9 +180,9 @@
             this.ezzi_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ezzi_price.Location = new System.Drawing.Point(934, 244);
             this.ezzi_price.Name = "ezzi_price";
-            this.ezzi_price.Size = new System.Drawing.Size(125, 15);
+            this.ezzi_price.Size = new System.Drawing.Size(115, 15);
             this.ezzi_price.TabIndex = 18;
-            this.ezzi_price.Text = "Price: 5000000000";
+            this.ezzi_price.Text = "Price: 5.00 Billion";
             // 
             // ezzi_count
             // 
@@ -199,9 +200,9 @@
             this.thue_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thue_price.Location = new System.Drawing.Point(1157, 244);
             this.thue_price.Name = "thue_price";
-            this.thue_price.Size = new System.Drawing.Size(141, 15);
+            this.thue_price.Size = new System.Drawing.Size(120, 15);
             this.thue_price.TabIndex = 20;
-            this.thue_price.Text = "Price: 999999999999";
+            this.thue_price.Text = "Price: 1.00 Trillion";
             // 
             // thue_count
             // 
@@ -292,7 +293,7 @@
             // 
             this.anton__words_s.AutoSize = true;
             this.anton__words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anton__words_s.Location = new System.Drawing.Point(152, 257);
+            this.anton__words_s.Location = new System.Drawing.Point(109, 257);
             this.anton__words_s.Name = "anton__words_s";
             this.anton__words_s.Size = new System.Drawing.Size(71, 15);
             this.anton__words_s.TabIndex = 23;
@@ -302,7 +303,7 @@
             // 
             this.lasse_words_s.AutoSize = true;
             this.lasse_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lasse_words_s.Location = new System.Drawing.Point(375, 257);
+            this.lasse_words_s.Location = new System.Drawing.Point(332, 257);
             this.lasse_words_s.Name = "lasse_words_s";
             this.lasse_words_s.Size = new System.Drawing.Size(71, 15);
             this.lasse_words_s.TabIndex = 24;
@@ -312,7 +313,7 @@
             // 
             this.casper_words_s.AutoSize = true;
             this.casper_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.casper_words_s.Location = new System.Drawing.Point(598, 257);
+            this.casper_words_s.Location = new System.Drawing.Point(563, 257);
             this.casper_words_s.Name = "casper_words_s";
             this.casper_words_s.Size = new System.Drawing.Size(71, 15);
             this.casper_words_s.TabIndex = 25;
@@ -322,7 +323,7 @@
             // 
             this.mads_words_s.AutoSize = true;
             this.mads_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mads_words_s.Location = new System.Drawing.Point(826, 257);
+            this.mads_words_s.Location = new System.Drawing.Point(776, 257);
             this.mads_words_s.Name = "mads_words_s";
             this.mads_words_s.Size = new System.Drawing.Size(71, 15);
             this.mads_words_s.TabIndex = 26;
@@ -332,7 +333,7 @@
             // 
             this.ezzi_words_s.AutoSize = true;
             this.ezzi_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ezzi_words_s.Location = new System.Drawing.Point(1044, 257);
+            this.ezzi_words_s.Location = new System.Drawing.Point(992, 257);
             this.ezzi_words_s.Name = "ezzi_words_s";
             this.ezzi_words_s.Size = new System.Drawing.Size(71, 15);
             this.ezzi_words_s.TabIndex = 27;
@@ -342,7 +343,7 @@
             // 
             this.thue_words_s.AutoSize = true;
             this.thue_words_s.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thue_words_s.Location = new System.Drawing.Point(1267, 257);
+            this.thue_words_s.Location = new System.Drawing.Point(1219, 257);
             this.thue_words_s.Name = "thue_words_s";
             this.thue_words_s.Size = new System.Drawing.Size(71, 15);
             this.thue_words_s.TabIndex = 28;
@@ -358,12 +359,26 @@
             this.load_button.UseVisualStyleBackColor = true;
             this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
+            // pretty_numbers_checkbox
+            // 
+            this.pretty_numbers_checkbox.AutoSize = true;
+            this.pretty_numbers_checkbox.Checked = true;
+            this.pretty_numbers_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.pretty_numbers_checkbox.Location = new System.Drawing.Point(333, 458);
+            this.pretty_numbers_checkbox.Name = "pretty_numbers_checkbox";
+            this.pretty_numbers_checkbox.Size = new System.Drawing.Size(98, 17);
+            this.pretty_numbers_checkbox.TabIndex = 30;
+            this.pretty_numbers_checkbox.Text = "Pretty Numbers";
+            this.pretty_numbers_checkbox.UseVisualStyleBackColor = true;
+            this.pretty_numbers_checkbox.CheckedChanged += new System.EventHandler(this.pretty_numbers_checkbox_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::A312a_clicker.Properties.Resources.sharelatex_transparent_4;
             this.ClientSize = new System.Drawing.Size(1383, 482);
+            this.Controls.Add(this.pretty_numbers_checkbox);
             this.Controls.Add(this.load_button);
             this.Controls.Add(this.thue_words_s);
             this.Controls.Add(this.ezzi_words_s);
@@ -434,6 +449,7 @@
         private System.Windows.Forms.Label ezzi_words_s;
         private System.Windows.Forms.Label thue_words_s;
         private System.Windows.Forms.Button load_button;
+        private System.Windows.Forms.CheckBox pretty_numbers_checkbox;
     }
 }
 

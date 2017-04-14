@@ -17,7 +17,7 @@ namespace A312a_clicker
 
         public override double Price()
         {
-            return 999999999999 + 800000000 * (2 * Math.Pow(Number, 2));
+            return 1000000000000 + 800000000 * (2 * Math.Pow(Number, 2));
         }
 
         public override void Upgrade()
