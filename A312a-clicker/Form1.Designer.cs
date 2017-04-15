@@ -61,6 +61,7 @@
             this.load_button = new System.Windows.Forms.Button();
             this.pretty_numbers_checkbox = new System.Windows.Forms.CheckBox();
             this.EventTimer = new System.Windows.Forms.Timer(this.components);
+            this.words_s_total = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // words_written_counter
@@ -69,9 +70,9 @@
             this.words_written_counter.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.words_written_counter.Location = new System.Drawing.Point(578, 344);
             this.words_written_counter.Name = "words_written_counter";
-            this.words_written_counter.Size = new System.Drawing.Size(149, 21);
+            this.words_written_counter.Size = new System.Drawing.Size(178, 21);
             this.words_written_counter.TabIndex = 1;
-            this.words_written_counter.Text = "Words written: 0";
+            this.words_written_counter.Text = "Words written: 0.00";
             // 
             // timer1
             // 
@@ -104,9 +105,9 @@
             this.anton_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anton_price.Location = new System.Drawing.Point(42, 244);
             this.anton_price.Name = "anton_price";
-            this.anton_price.Size = new System.Drawing.Size(53, 15);
+            this.anton_price.Size = new System.Drawing.Size(61, 15);
             this.anton_price.TabIndex = 5;
-            this.anton_price.Text = "Price: 2";
+            this.anton_price.Text = "Price: 10";
             // 
             // upgrade_panel
             // 
@@ -122,9 +123,9 @@
             this.lasse_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lasse_price.Location = new System.Drawing.Point(265, 244);
             this.lasse_price.Name = "lasse_price";
-            this.lasse_price.Size = new System.Drawing.Size(77, 15);
+            this.lasse_price.Size = new System.Drawing.Size(85, 15);
             this.lasse_price.TabIndex = 8;
-            this.lasse_price.Text = "Price: 1000";
+            this.lasse_price.Text = "Price: 10000";
             // 
             // casper_price
             // 
@@ -132,9 +133,9 @@
             this.casper_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.casper_price.Location = new System.Drawing.Point(488, 244);
             this.casper_price.Name = "casper_price";
-            this.casper_price.Size = new System.Drawing.Size(93, 15);
+            this.casper_price.Size = new System.Drawing.Size(125, 15);
             this.casper_price.TabIndex = 14;
-            this.casper_price.Text = "Price: 500000";
+            this.casper_price.Text = "Price: 50.00 Million";
             // 
             // lasse_count
             // 
@@ -162,9 +163,9 @@
             this.mads_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mads_price.Location = new System.Drawing.Point(711, 244);
             this.mads_price.Name = "mads_price";
-            this.mads_price.Size = new System.Drawing.Size(125, 15);
+            this.mads_price.Size = new System.Drawing.Size(123, 15);
             this.mads_price.TabIndex = 16;
-            this.mads_price.Text = "Price: 10.00 Million";
+            this.mads_price.Text = "Price: 10.00 Billion";
             // 
             // mads_count
             // 
@@ -182,9 +183,9 @@
             this.ezzi_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ezzi_price.Location = new System.Drawing.Point(934, 244);
             this.ezzi_price.Name = "ezzi_price";
-            this.ezzi_price.Size = new System.Drawing.Size(115, 15);
+            this.ezzi_price.Size = new System.Drawing.Size(128, 15);
             this.ezzi_price.TabIndex = 18;
-            this.ezzi_price.Text = "Price: 5.00 Billion";
+            this.ezzi_price.Text = "Price: 50.00 Trillion";
             // 
             // ezzi_count
             // 
@@ -202,9 +203,9 @@
             this.thue_price.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thue_price.Location = new System.Drawing.Point(1157, 244);
             this.thue_price.Name = "thue_price";
-            this.thue_price.Size = new System.Drawing.Size(120, 15);
+            this.thue_price.Size = new System.Drawing.Size(158, 15);
             this.thue_price.TabIndex = 20;
-            this.thue_price.Text = "Price: 1.00 Trillion";
+            this.thue_price.Text = "Price: 100.00 Quadrillion";
             // 
             // thue_count
             // 
@@ -222,7 +223,7 @@
             this.cheat_button.Name = "cheat_button";
             this.cheat_button.Size = new System.Drawing.Size(152, 23);
             this.cheat_button.TabIndex = 22;
-            this.cheat_button.Text = "Give 100 quadrillion words";
+            this.cheat_button.Text = "Give 1 quintillion words";
             this.cheat_button.UseVisualStyleBackColor = true;
             this.cheat_button.Click += new System.EventHandler(this.cheat_button_Click);
             // 
@@ -379,12 +380,23 @@
             this.EventTimer.Interval = 300000;
             this.EventTimer.Tick += new System.EventHandler(this.EventTimer_Tick);
             // 
+            // words_s_total
+            // 
+            this.words_s_total.AutoSize = true;
+            this.words_s_total.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.words_s_total.Location = new System.Drawing.Point(578, 365);
+            this.words_s_total.Name = "words_s_total";
+            this.words_s_total.Size = new System.Drawing.Size(131, 21);
+            this.words_s_total.TabIndex = 31;
+            this.words_s_total.Text = "Words/s: 0.00";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::A312a_clicker.Properties.Resources.sharelatex_transparent_4;
             this.ClientSize = new System.Drawing.Size(1383, 482);
+            this.Controls.Add(this.words_s_total);
             this.Controls.Add(this.pretty_numbers_checkbox);
             this.Controls.Add(this.load_button);
             this.Controls.Add(this.thue_words_s);
@@ -458,6 +470,7 @@
         private System.Windows.Forms.Button load_button;
         private System.Windows.Forms.CheckBox pretty_numbers_checkbox;
         private System.Windows.Forms.Timer EventTimer;
+        private System.Windows.Forms.Label words_s_total;
     }
 }
 

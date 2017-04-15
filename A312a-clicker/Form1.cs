@@ -30,6 +30,8 @@ namespace A312a_clicker
 
         UInt64 words_written = 0;
         string words_written_string;
+        UInt64 words_s = 0;
+        string words_s_string;
         int _typedWords = 0;
         public Person[] AllPeople = new Person[6];
         Event events;
@@ -57,6 +59,25 @@ namespace A312a_clicker
                 words_written_string = NumberConvert.ConvertIt(words_written);
             }
             words_written_counter.Text = $"Words written: {words_written_string}";
+
+        }
+
+        void RefreshWordsSecond()
+        {
+            words_s = 0;
+            for (int i = 0; i < 6; ++i)
+            {
+                if (AllPeople[i].Number > 0)
+                {
+                    words_s += (UInt64)(AllPeople[i].Income());
+                }
+            }
+            words_s_string = words_s.ToString();
+            if (ConvertToPrettyNumbers)
+            {
+                words_s_string = NumberConvert.ConvertIt(words_s);
+            }
+            words_s_total.Text = $"Words/s: {words_s_string}";
 
         }
 
@@ -104,7 +125,7 @@ namespace A312a_clicker
             }
             Save.SaveOrLoadSuccessful(false);
         }
-
+        /* TO-DO: All these Click methods are similar. Maybe make them all call a single method instead? */
         private void Anton_Click(object sender, EventArgs e)
         {
             if (words_written >= AllPeople[0].Price())
@@ -113,9 +134,10 @@ namespace A312a_clicker
                 AllPeople[0].Purchase();
                 if (AllPeople[0].Number == 5)
                 {
-                    UpgradeCreater("anton_upgrade_1.png", 0);
+                    UpgradeCreater("anton_upgrade_1.png", 0, AllPeople[0].Upgrade1Tooltip);
                     AllPeople[0].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
@@ -128,9 +150,10 @@ namespace A312a_clicker
                 AllPeople[1].Purchase();
                 if (AllPeople[1].Number == 5)
                 {
-                    UpgradeCreater("lasse1.png", 1);
+                    UpgradeCreater("lasse1.png", 1, "");
                     AllPeople[1].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
@@ -144,9 +167,10 @@ namespace A312a_clicker
                 AllPeople[2].Purchase();
                 if (AllPeople[2].Number == 5)
                 {
-                    UpgradeCreater("casper1.png", 2);
+                    UpgradeCreater("casper1.png", 2, "");
                     AllPeople[2].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
@@ -159,9 +183,10 @@ namespace A312a_clicker
                 AllPeople[3].Purchase();
                 if (AllPeople[3].Number == 5)
                 {
-                    UpgradeCreater("mads.png", 3);
+                    UpgradeCreater("mads.png", 3, "");
                     AllPeople[3].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
@@ -174,9 +199,10 @@ namespace A312a_clicker
                 AllPeople[4].Purchase();
                 if (AllPeople[4].Number == 5)
                 {
-                    UpgradeCreater("ezzi.png", 4);
+                    UpgradeCreater("ezzi.png", 4, "");
                     AllPeople[4].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
@@ -189,13 +215,15 @@ namespace A312a_clicker
                 AllPeople[5].Purchase();
                 if (AllPeople[5].Number == 5)
                 {
-                    UpgradeCreater("thue.png", 5);
+                    UpgradeCreater("thue.png", 5, "");
                     AllPeople[5].Upgrade1_true = true;
                 }
+                RefreshWordsSecond();
                 RefreshWords();
             }
         }
 
+        
         private void cheat_button_Click(object sender, EventArgs e)
         {
             words_written += 1000000000000000000;
@@ -204,13 +232,13 @@ namespace A312a_clicker
 
         int xcoordinate = 0;
         int ycoordinate = 0;
-        private void UpgradeCreater(string image_path, int person_to_upgrade)
+        private void UpgradeCreater(string image_path, int person_to_upgrade, string UpgradeTooltip)
         {
            
             /* The files are in \Source\Repos\A312a-clicker\A312a-clicker\bin\Debug, so cannot find file in resource folder yet */
             
             if (xcoordinate < 560) {
-                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate), UpgradeTooltip));
                 upgrade_panel.Controls.Add(upgrade_button);
                 upgrade_button.Click += Upgrade_button_Click;
                 xcoordinate += 190;
@@ -219,7 +247,7 @@ namespace A312a_clicker
             {
                 xcoordinate = 0;
                 ycoordinate += 90;
-                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate)));
+                Upgrade_button upgrade_button = (new Upgrade_button(image_path, person_to_upgrade, ref AllPeople, new Point(xcoordinate, ycoordinate), UpgradeTooltip));
                 upgrade_panel.Controls.Add(upgrade_button);
                 upgrade_button.Click += Upgrade_button_Click;
                 xcoordinate += 190;
@@ -228,6 +256,7 @@ namespace A312a_clicker
 
         private void Upgrade_button_Click(object sender, EventArgs e)
         {
+            RefreshWordsSecond();
             xcoordinate = 0;
             ycoordinate = 0;
             foreach (Upgrade_button button in upgrade_panel.Controls)

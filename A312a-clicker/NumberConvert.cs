@@ -18,10 +18,13 @@ namespace A312a_clicker
             Quadrillion = 1000000000000000;
             Quintillion = 1000000000000000000;
             Sextillion  = 1000000000000000000000;
+            Septillion  = 1000000000000000000000000;
+            Octillion   = 1000000000000000000000000000;
             */
             int InputSize = 0;
-            double[] Numbers = { 1.0, 1000000.0, 1000000000.0, 1000000000000.0, 1000000000000000.0, 1000000000000000000.0, 1000000000000000000000.0 };
-            string[] NumberNames = { "", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion" };
+            /* Must add a name for every number added */
+            double[] Numbers = { 1.0, 1000000.0, 1000000000.0, 1000000000000.0, 1000000000000000.0, 1000000000000000000.0, 1000000000000000000000.0, 1000000000000000000000000.0, 1000000000000000000000000000.0 };
+            string[] NumberNames = { "", "Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion" };
             int NumbersSize = Numbers.Count();
 
             for(int i = 1; i < NumbersSize; ++i)

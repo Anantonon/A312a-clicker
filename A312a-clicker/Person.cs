@@ -25,8 +25,39 @@ namespace A312a_clicker
         public long Number = 0;
         public long Words_second;
 
+
+        /* Every person can have three unique upgrades */
         public bool Upgrade1_true;
-        public abstract void Upgrade();
+        public abstract double Upgrade1();
+        public string Upgrade1Tooltip;
+        public bool Upgrade2_true;
+        public abstract double Upgrade2();
+        public string Upgrade2Tooltip;
+        public bool Upgrade_3_true;
+        public abstract double Upgrade3();
+        public string Upgrade3Tooltip;
+
+        /* TO-DO: Make the person determine if able to upgrade, not Form1*/
+        public void Upgrade()
+        {
+            if (Upgrade1_true)
+            {
+                Upgrade_Factor *= Upgrade1();
+                Upgrade1_true = false;
+            }
+            if (Upgrade2_true)
+            {
+                Upgrade_Factor *= Upgrade2();
+                Upgrade2_true = false;
+            }
+            if (Upgrade_3_true)
+            {
+                Upgrade_Factor *= Upgrade3();
+                Upgrade_3_true = false;
+            }
+            Refresh();
+        }
+        
         public double Upgrade_Factor = 1;
 
         public abstract double Price();

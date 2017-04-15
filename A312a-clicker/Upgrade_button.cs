@@ -14,7 +14,7 @@ namespace A312a_clicker
         /* When created, the upgrade_button will get an image from the filepath, 
          * it will know which person to upgrade,
          * and it has access to the array of all people, so that it can call their methods*/
-        public Upgrade_button(string image_filepath, int person_to_upgrade, ref Person[] AllPeople, Point Location)
+        public Upgrade_button(string image_filepath, int person_to_upgrade, ref Person[] AllPeople, Point Location, string TooltipText)
         {
             UseVisualStyleBackColor = true;
             Size = new Size(180, 80);
@@ -23,12 +23,17 @@ namespace A312a_clicker
             this.person_to_upgrade = person_to_upgrade;
             this.AllPeople = AllPeople;
             this.Location = Location;
+            /* Generates a tooltip, with a description for the upgrade */
+            Tooltip = new ToolTip();
+            Tooltip.SetToolTip(this, TooltipText);
+            Tooltip.InitialDelay = 1;
         }
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override string Text { get; set; }
 
         int person_to_upgrade;
         Person[] AllPeople;
+        ToolTip Tooltip;
 
         void Upgrade_button_click(object sender, EventArgs e)
         {
